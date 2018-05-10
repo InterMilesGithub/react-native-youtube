@@ -1,5 +1,7 @@
 package com.inprogress.reactnativeyoutube;
 
+import android.content.pm.ActivityInfo;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
@@ -75,6 +77,7 @@ public class YouTubePlayerController implements
 
     @Override
     public void onPlaying() {
+        Log.d("[FEM-JAVA]", "YTController::playing");
         mYouTubeView.didChangeToState("playing");
     }
 
@@ -381,6 +384,7 @@ public class YouTubePlayerController implements
     }
 
     public void setFullscreen(boolean fullscreen) {
+        Log.d("[FEM-JAVA]","YTController::setFullscreen "+fullscreen);
         mFullscreen = fullscreen;
         if (isLoaded()) updateFullscreen();
     }
