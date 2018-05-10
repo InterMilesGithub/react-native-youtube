@@ -81,6 +81,8 @@ public class YouTubeManager extends SimpleViewManager<YouTubeView> {
             (Object) MapBuilder.of("registrationName", "onYouTubeReady"),
             "state",
             (Object) MapBuilder.of("registrationName", "onYouTubeChangeState"),
+            "willUpdateFullScreen",
+            (Object) MapBuilder.of("registrationName", "willUpdateFullscreen"),
             "quality",
             (Object) MapBuilder.of("registrationName", "onYouTubeChangeQuality"),
             "fullscreen",

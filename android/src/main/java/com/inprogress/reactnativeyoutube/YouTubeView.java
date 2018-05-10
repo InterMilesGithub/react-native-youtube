@@ -153,6 +153,14 @@ public class YouTubeView extends FrameLayout {
         reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(getId(), "fullscreen", event);
     }
 
+    public void willUpdateFullscreen() {
+        WritableMap event = Arguments.createMap();
+        event.putString("willUpdateFullScreen", "willUpdateFullscreen");
+        event.putInt("target", getId());
+        ReactContext reactContext = getReactContext();
+        reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(getId(), "willUpdateFullScreen", event);
+    }
+
     public void setApiKey(String apiKey) {
         try {
             mVideoFragment.initialize(apiKey, mYouTubeController);

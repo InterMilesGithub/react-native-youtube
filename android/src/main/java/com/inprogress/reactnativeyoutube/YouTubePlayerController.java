@@ -385,6 +385,7 @@ public class YouTubePlayerController implements
 
     public void setFullscreen(boolean fullscreen) {
         Log.d("[FEM-JAVA]","YTController::setFullscreen "+fullscreen);
+        mYouTubeView.willUpdateFullscreen();
         mFullscreen = fullscreen;
         if (isLoaded()) updateFullscreen();
     }
