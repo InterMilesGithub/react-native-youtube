@@ -54,6 +54,7 @@ public class YouTubePlayerController implements
             mYouTubePlayer.setPlayerStateChangeListener(this);
             mYouTubePlayer.setPlaybackEventListener(this);
             mYouTubePlayer.setOnFullscreenListener(this);
+            mYouTubePlayer.setFullscreenControlFlags(mYouTubePlayer.FULLSCREEN_FLAG_CONTROL_ORIENTATION);
             updateFullscreen();
             updateShowFullscreenButton();
             updateControls();
@@ -149,6 +150,10 @@ public class YouTubePlayerController implements
 
     @Override
     public void onFullscreen(boolean isFullscreen) {
+        if (isFullscreen) {
+            Log.d("[FEM-JAVA]","YTController::onFullscreen isFullscreen TRUE");
+            mYouTubeView.getReactContext().getCurrentActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
         mYouTubeView.didChangeToFullscreen(isFullscreen);
     }
 
